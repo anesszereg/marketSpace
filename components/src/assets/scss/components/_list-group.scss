@@ -1,0 +1,29 @@
+//
+// _list-group.scss
+//
+
+@each $color,
+$value in $theme-colors {
+    .list-group{
+        .list-group-fill-#{$color} {
+            --#{$prefix}list-group-bg:               #{$value};
+            --#{$prefix}list-group-border-color:     #{$value};
+        }
+    }
+}
+
+.list-group-item {
+    margin-bottom: 0px;
+    .list-text {
+        color: $text-muted;
+    }
+    &.active {
+        box-shadow: $element-shadow;
+        .list-title {
+            color: $white;
+        }
+        .list-text {
+            color: rgba($white, 0.50);
+        }
+    }
+}

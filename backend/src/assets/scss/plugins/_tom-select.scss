@@ -1,0 +1,101 @@
+//
+// tom-select.scss
+//
+
+.ts-wrapper {
+    .ts-control{
+        background-color: $dropdown-bg;
+        border-color: var(--#{$prefix}border-color-translucent);
+        padding: $input-padding-y $input-padding-x;
+        input{
+            color: $dropdown-link-color;
+            &::placeholder{
+                color: $input-placeholder-color;
+            }
+        }
+    }
+    &.multi{
+        &.has-items {
+            .ts-control{
+                padding: calc($input-padding-y - 1px) $input-padding-x calc($input-padding-y - 4px);
+            }
+        }
+        .ts-control>div{
+            background-color: var(--#{$prefix}light);
+            color: var(--#{$prefix}secondary-color);
+        }
+    }
+    
+    &.focus .ts-control{
+        color: $dropdown-link-color;
+        box-shadow: none;
+    }
+
+    .ts-control, .ts-control input, .ts-dropdown{
+        color: $dropdown-link-color;
+    }
+
+    .ts-control, .ts-wrapper.single.input-active .ts-control{
+        background-color: $dropdown-bg !important;
+    }
+    
+    .ts-dropdown, .ts-dropdown.form-control, .ts-dropdown.form-select{
+        background-color: $dropdown-bg;
+    }
+    .ts-dropdown .active{
+        background-color: $dropdown-link-active-bg;
+        color: $dropdown-link-active-color;
+    }
+    
+
+    .ts-dropdown{
+        .create, 
+        .no-results, 
+        .optgroup-header, 
+        .option{
+            padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+        }
+    }
+
+    .option {
+        .title {
+            display: block;
+        }
+
+        .url {
+            font-size: 12px;
+            display: block;
+            color: $text-muted;
+        }
+    }
+
+    &.contacts {
+        .ts-control {
+            >div {
+                .email {
+                    opacity: 0.7;
+                }
+
+                .name+.email {
+                    margin-left: 5px;
+                }
+
+                .email:before {
+                    content: '<';
+                }
+
+                .email:after {
+                    content: '>';
+                }
+            }
+        }
+
+        .ts-dropdown {
+            .caption {
+                font-size: 12px;
+                display: block;
+                color: $text-muted;
+            }
+        }
+    }
+}
